@@ -263,7 +263,7 @@ class _planck_2018_CamSpec_python(_DataSetLikelihood):
         return self._fast_chi_squared(self.covinv, delta_vector)
 
     def logp(self, **data_params):
-        Cls = self.theory.get_Cl(ell_factor=True)
+        Cls = self.provider.get_Cl(ell_factor=True)
         return -0.5 * self.chi_squared(Cls.get('tt'), Cls.get('te'), Cls.get('ee'),
                                        data_params)
 
